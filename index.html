@@ -49,21 +49,17 @@
             line-height: 1.6;
         }
 
-        /* HERO CON EFECTO PARALLAX */
         .hero {
             position: relative;
             text-align: center;
             padding: 200px 20px 100px;
-            /* Más espacio arriba para el título gigante */
             background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
                 url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover fixed;
             overflow: hidden;
         }
 
-        /* TÍTULO GIGANTE CON EFECTO */
         .hero-title {
             font-size: 7rem;
-            /* Muy grande */
             font-weight: 900;
             color: #00d4ff;
             letter-spacing: 5px;
@@ -84,7 +80,6 @@
             }
         }
 
-        /* Animaciones para h2 y p */
         .hero h2 {
             font-size: 2rem;
             font-weight: 800;
@@ -107,6 +102,7 @@
             border-radius: 8px;
             font-weight: 700;
             margin-bottom: 15px;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -160,7 +156,6 @@
             opacity: .6;
         }
 
-        /* Ajustes responsive */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 4rem;
@@ -172,7 +167,6 @@
         }
     </style>
 
-    <!-- SEO Local Business -->
     <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -191,10 +185,7 @@
 
     <section class="hero">
         <div class="container">
-            <!-- TITULO GIGANTE CON EFECTO PARALLAX -->
             <h1 class="hero-title">RentalDJ</h1>
-
-            <!-- TÍTULO ORIGINAL -->
             <h2>Producción Técnica de Sonido & DJ para Eventos Corporativos</h2>
             <p>Equipamiento profesional, técnico incluido y montaje completo en Barcelona.</p>
 
@@ -203,8 +194,9 @@
                 Solicitar Presupuesto por WhatsApp
             </a>
 
-            <a href="#servicios" class="btn btn-secondary">
-                Ver Servicios
+            <!-- BOTÓN MODIFICADO -->
+            <a href="packs.html" class="btn btn-secondary">
+                Ver Packs de Servicios
             </a>
         </div>
     </section>
