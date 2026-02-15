@@ -52,7 +52,9 @@
             text-align: center;
             padding: 200px 20px 100px;
             background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
-                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover fixed;
+                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
             overflow: hidden;
         }
 
@@ -143,7 +145,15 @@
             margin-top: 50px;
         }
 
+        /* AJUSTES PARA MÓVIL */
         @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px 80px;
+                background-attachment: scroll;
+                /* evita zoom exagerado */
+                background-position: center top;
+            }
+
             .hero-title {
                 font-size: 4rem;
             }
@@ -207,7 +217,7 @@
         </div>
     </section>
 
-    <!-- FOOTER IGUAL QUE INDEX -->
+    <!-- FOOTER -->
     <footer>
         © 2026 RentalDJ | Producción Técnica para Eventos en Barcelona
     </footer>
