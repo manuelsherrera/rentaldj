@@ -105,53 +105,45 @@
             }
         }
 
-        /* HERO */
+        /* HERO MOBILE-FIRST */
         section.hero {
             position: relative;
             text-align: center;
-            padding: 220px 20px 100px;
+            padding: 140px 20px 80px;
             background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
-                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
+                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center top / cover no-repeat;
+            background-attachment: scroll;
             overflow: hidden;
             margin-top: 70px;
         }
 
         .hero-title {
-            font-size: 7rem;
+            font-size: 4rem;
             font-weight: 900;
             color: #00d4ff;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            opacity: 0;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
             animation: fadeInUp 1.5s forwards;
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: #fff;
+            animation: fadeInUp 1.5s 0.7s forwards;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-30px);
             }
 
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .hero h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: #fff;
-            opacity: 0;
-            animation: fadeInUp 1.5s 0.7s forwards;
-        }
-
-        p {
-            opacity: .85;
-            line-height: 1.6;
         }
 
         /* CARDS */
@@ -212,21 +204,28 @@
             margin-top: 50px;
         }
 
-        @media(max-width:768px) {
-            .hero {
-                padding: 140px 20px 80px;
-                background-attachment: scroll;
-                background-position: center top;
+        @media(min-width:768px) {
+            section.hero {
+                padding: 200px 20px 100px;
+                background-attachment: fixed;
+                background-position: center center;
             }
 
             .hero-title {
-                font-size: 4rem;
+                font-size: 7rem;
+                letter-spacing: 5px;
             }
 
             .hero h2 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
+            .cards {
+                flex-direction: row;
+            }
+        }
+
+        @media(max-width:768px) {
             .cards {
                 flex-direction: column;
                 align-items: center;
@@ -248,8 +247,8 @@
         <nav id="nav-menu">
             <a href="index.html">Inicio</a>
             <a href="packs.html">Packs DJ</a>
-            <a href="enconstruccion.html">Packs Sonido</a>
-            <a href="enconstruccion.html">Galería</a>
+            <a href="en-construccion.html">Packs Sonido</a>
+            <a href="en-construccion.html">Galería</a>
         </nav>
     </header>
 
