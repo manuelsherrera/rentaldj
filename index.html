@@ -49,20 +49,54 @@
             line-height: 1.6;
         }
 
+        /* HERO CON EFECTO PARALLAX */
         .hero {
-            padding: 90px 20px;
+            position: relative;
             text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)),
-                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover;
+            padding: 200px 20px 100px;
+            /* Más espacio arriba para el título gigante */
+            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
+                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover fixed;
+            overflow: hidden;
         }
 
-        .hero h1 {
+        /* TÍTULO GIGANTE CON EFECTO */
+        .hero-title {
+            font-size: 7rem;
+            /* Muy grande */
+            font-weight: 900;
+            color: #00d4ff;
+            letter-spacing: 5px;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animaciones para h2 y p */
+        .hero h2 {
             font-size: 2rem;
+            font-weight: 800;
             margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1.5s 0.7s forwards;
         }
 
         .hero p {
             margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1.5s 1s forwards;
         }
 
         .btn {
@@ -125,6 +159,17 @@
             background: #000;
             opacity: .6;
         }
+
+        /* Ajustes responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 
     <!-- SEO Local Business -->
@@ -146,7 +191,11 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Producción Técnica de Sonido & DJ para Eventos Corporativos</h1>
+            <!-- TITULO GIGANTE CON EFECTO PARALLAX -->
+            <h1 class="hero-title">RentalDJ</h1>
+
+            <!-- TÍTULO ORIGINAL -->
+            <h2>Producción Técnica de Sonido & DJ para Eventos Corporativos</h2>
             <p>Equipamiento profesional, técnico incluido y montaje completo en Barcelona.</p>
 
             <a href="https://wa.me/34603819541?text=Hola,%20quiero%20informacion%20de%20los%20packs%20de%20cabina%20de%20dj's"
