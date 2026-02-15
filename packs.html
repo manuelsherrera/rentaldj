@@ -33,23 +33,58 @@
         h1,
         h2 {
             font-weight: 800;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 40px;
-            color: #00d4ff;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 40px;
+            text-align: center;
         }
 
         p {
             opacity: .85;
             line-height: 1.6;
+        }
+
+        /* HERO CON EL MISMO ESTILO QUE INDEX.HTML */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 200px 20px 100px;
+            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
+                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover fixed;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 7rem;
+            font-weight: 900;
+            color: #00d4ff;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #fff;
+            opacity: 0;
+            animation: fadeInUp 1.5s 0.7s forwards;
         }
 
         .cards {
@@ -66,6 +101,12 @@
             border: 1px solid #1d2733;
             width: 300px;
             text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
         }
 
         .price {
@@ -86,6 +127,11 @@
             text-decoration: none;
             background: #00d4ff;
             color: #000;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #00a3cc;
         }
 
         footer {
@@ -98,6 +144,14 @@
         }
 
         @media (max-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
             .cards {
                 flex-direction: column;
                 align-items: center;
@@ -108,42 +162,52 @@
 
 <body>
 
+    <!-- HERO IGUAL QUE INDEX -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">RentalDJ</h1>
+            <h2>Packs de Servicios</h2>
+            <p>Elige el pack perfecto para tu evento corporativo o privado en Barcelona.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PACKS -->
     <section>
         <div class="container">
-            <h1>Packs de Servicios</h1>
             <div class="cards">
 
                 <div class="card">
-                    <h2>Packing Básico</h2>
+                    <h2>Pack Básico</h2>
                     <p>Sonorización profesional para eventos pequeños. Incluye altavoces, micrófonos y soporte técnico
                         básico.</p>
                     <div class="price">Desde 350€</div>
-                    <a href="https://wa.me/34603819541?text=Hola,%20quiero%20el%20Pack%20Básico" class="btn-primary"
-                        target="_blank">Solicitar Pack</a>
-                </div>
-
-                <div class="card">
-                    <h2>Packing Corporativo</h2>
-                    <p>DJ profesional adaptado a eventos corporativos y reuniones. Sonido y montaje completo incluido.
-                    </p>
-                    <div class="price">Desde 500€</div>
-                    <a href="https://wa.me/34603819541?text=Hola,%20quiero%20el%20Pack%20Corporativo"
+                    <a href="https://wa.me/34603819541?text=Hola,%20quiero%20información%20sobre%20el%20Pack%20Básico"
                         class="btn-primary" target="_blank">Solicitar Pack</a>
                 </div>
 
                 <div class="card">
-                    <h2>Packing Premium</h2>
+                    <h2>Pack Corporativo</h2>
+                    <p>DJ profesional adaptado a eventos corporativos y reuniones. Sonido y montaje completo incluido.
+                    </p>
+                    <div class="price">Desde 500€</div>
+                    <a href="https://wa.me/34603819541?text=Hola,%20quiero%20información%20sobre%20el%20Pack%20Corporativo"
+                        class="btn-primary" target="_blank">Solicitar Pack</a>
+                </div>
+
+                <div class="card">
+                    <h2>Pack Premium</h2>
                     <p>Producción completa para eventos grandes: sonido, DJ, iluminación y técnico profesional incluido.
                     </p>
                     <div class="price">Desde 750€</div>
-                    <a href="https://wa.me/34603819541?text=Hola,%20quiero%20el%20Pack%20Premium" class="btn-primary"
-                        target="_blank">Solicitar Pack</a>
+                    <a href="https://wa.me/34603819541?text=Hola,%20quiero%20información%20sobre%20el%20Pack%20Premium"
+                        class="btn-primary" target="_blank">Solicitar Pack</a>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- FOOTER IGUAL QUE INDEX -->
     <footer>
         © 2026 RentalDJ | Producción Técnica para Eventos en Barcelona
     </footer>
