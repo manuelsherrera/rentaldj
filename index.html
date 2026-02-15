@@ -49,12 +49,15 @@
             line-height: 1.6;
         }
 
+        /* HERO CON EL MISMO ESTILO AJUSTADO PARA MÓVIL */
         .hero {
             position: relative;
             text-align: center;
             padding: 200px 20px 100px;
             background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
-                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover fixed;
+                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
             overflow: hidden;
         }
 
@@ -63,7 +66,7 @@
             font-weight: 900;
             color: #00d4ff;
             letter-spacing: 5px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             opacity: 0;
             animation: fadeInUp 1.5s forwards;
         }
@@ -83,15 +86,10 @@
         .hero h2 {
             font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            color: #fff;
             opacity: 0;
             animation: fadeInUp 1.5s 0.7s forwards;
-        }
-
-        .hero p {
-            margin-bottom: 30px;
-            opacity: 0;
-            animation: fadeInUp 1.5s 1s forwards;
         }
 
         .btn {
@@ -102,12 +100,15 @@
             border-radius: 8px;
             font-weight: 700;
             margin-bottom: 15px;
-            text-decoration: none;
         }
 
         .btn-primary {
             background: #00d4ff;
             color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #00a3cc;
         }
 
         .btn-secondary {
@@ -156,7 +157,14 @@
             opacity: .6;
         }
 
+        /* AJUSTES PARA MÓVIL */
         @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px 80px;
+                background-attachment: scroll;
+                background-position: center top;
+            }
+
             .hero-title {
                 font-size: 4rem;
             }
@@ -167,6 +175,7 @@
         }
     </style>
 
+    <!-- SEO Local Business -->
     <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -183,6 +192,7 @@
 
 <body>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">RentalDJ</h1>
@@ -194,17 +204,16 @@
                 Solicitar Presupuesto por WhatsApp
             </a>
 
-            <!-- BOTÓN MODIFICADO -->
             <a href="packs.html" class="btn btn-secondary">
-                Ver Packs de Servicios
+                Ver Packs
             </a>
         </div>
     </section>
 
+    <!-- SECCIÓN SERVICIOS -->
     <section id="servicios">
         <div class="container">
             <h2>Servicios Técnicos</h2>
-
             <div class="services">
 
                 <div class="card">
@@ -223,18 +232,18 @@
         </div>
     </section>
 
+    <!-- SECCIÓN FEATURES -->
     <section>
         <div class="container features">
             <h2>Por Qué Elegir RentalDJ</h2>
-
             <div class="feature-item">✔ Equipos profesionales de alta gama</div>
             <div class="feature-item">✔ Puntualidad y montaje técnico garantizado</div>
             <div class="feature-item">✔ Experiencia en eventos corporativos</div>
             <div class="feature-item">✔ Asesoramiento personalizado</div>
-
         </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta">
         <div class="container">
             <h2>Reserva tu Fecha</h2>
@@ -248,6 +257,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         © 2026 RentalDJ | Producción Técnica para Eventos en Barcelona
     </footer>
