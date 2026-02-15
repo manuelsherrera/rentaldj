@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentalDJ | Alquiler Técnico de Sonido y DJ para Empresas en Barcelona</title>
-
-    <meta name="description"
-        content="RentalDJ ofrece alquiler profesional de sonido, DJ y producción técnica para eventos corporativos en Barcelona. Montaje, técnico incluido y presupuesto inmediato por WhatsApp.">
+    <title>RentalDJ | Alquiler Técnico de Sonido y DJ en Barcelona</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
 
@@ -22,59 +19,30 @@
         body {
             background: #0b0f14;
             color: #fff;
-        }
-
-        section {
-            padding: 70px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        h1,
-        h2 {
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        p {
-            opacity: .85;
             line-height: 1.6;
         }
 
-        /* HERO CON EL MISMO ESTILO AJUSTADO PARA MÓVIL */
+        /* HERO */
         .hero {
-            position: relative;
             text-align: center;
-            padding: 200px 20px 100px;
-            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
-                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            overflow: hidden;
+            padding: 120px 20px 80px;
+            background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .9)),
+                url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center top / cover no-repeat;
         }
 
         .hero-title {
-            font-size: 7rem;
+            font-size: 3.5rem;
             font-weight: 900;
             color: #00d4ff;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 1.5s forwards;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s ease forwards;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-25px);
             }
 
             to {
@@ -83,23 +51,19 @@
             }
         }
 
-        .hero h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            color: #fff;
-            opacity: 0;
-            animation: fadeInUp 1.5s 0.7s forwards;
-        }
-
+        /* BOTONES */
         .btn {
             display: block;
             width: 100%;
+            max-width: 320px;
+            margin: 12px auto;
             text-align: center;
-            padding: 16px;
-            border-radius: 8px;
+            padding: 14px 18px;
+            border-radius: 10px;
             font-weight: 700;
-            margin-bottom: 15px;
+            text-decoration: none;
+            transition: all .3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
         }
 
         .btn-primary {
@@ -109,153 +73,98 @@
 
         .btn-primary:hover {
             background: #00a3cc;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 212, 255, 0.3);
         }
 
         .btn-secondary {
-            border: 1px solid #00d4ff;
+            background: rgba(0, 212, 255, 0.08);
             color: #00d4ff;
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            backdrop-filter: blur(6px);
         }
 
-        .services {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 212, 255, 0.25);
         }
 
-        .card {
-            background: #111820;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #1d2733;
+        /* SECCIÓN CTA */
+        section {
+            padding: 50px 20px;
+            text-align: center;
         }
 
-        .price {
-            color: #00d4ff;
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
             font-weight: 800;
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
-
-        .features {
-            text-align: center;
-        }
-
-        .feature-item {
-            margin-bottom: 15px;
-        }
-
-        .cta {
-            text-align: center;
-            background: #0f1620;
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             font-size: .8rem;
             background: #000;
             opacity: .6;
+            margin-top: 40px;
         }
 
-        /* AJUSTES PARA MÓVIL */
-        @media (max-width: 768px) {
+        /* DESKTOP */
+        @media(min-width:768px) {
             .hero {
-                padding: 120px 20px 80px;
-                background-attachment: scroll;
-                background-position: center top;
+                padding: 200px 20px 100px;
+                background-attachment: fixed;
+                background-position: center center;
             }
 
             .hero-title {
-                font-size: 4rem;
-            }
-
-            .hero h2 {
-                font-size: 1.6rem;
+                font-size: 6rem;
+                letter-spacing: 4px;
             }
         }
     </style>
-
-    <!-- SEO Local Business -->
-    <script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "LocalBusiness",
-"name": "RentalDJ",
-"url": "https://rentaldj.es",
-"areaServed": "Barcelona",
-"description": "Alquiler técnico profesional de sonido, DJ y producción audiovisual para eventos corporativos.",
-"telephone": "+34603819541"
-}
-</script>
-
 </head>
 
 <body>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">RentalDJ</h1>
+        <h1 class="hero-title">RentalDJ</h1>
 
-            <a href="https://wa.me/34603819541?text=Hola,%20quiero%20informacion%20de%20los%20packs%20de%20cabina%20de%20dj's"
-                class="btn btn-primary" target="_blank">
-                Solicitar Presupuesto por WhatsApp
-            </a>
+        <a href="https://wa.me/34603819541?text=Hola,%20quiero%20informacion%20sobre%20presupuesto"
+            class="btn btn-primary" target="_blank">
+            Solicitar Presupuesto
+        </a>
 
-            <a href="packs.html" class="btn btn-secondary">
-                Ver Packs
-            </a>
-        </div>
-    </section>
+        <a href="packs.html" class="btn btn-secondary">
+            Ver Packs DJ
+        </a>
 
-    <!-- SECCIÓN SERVICIOS 
-    <section id="servicios">
-        <div class="container">
-            <h2>Servicios Técnicos</h2>
-            <div class="services">
+        <a href="enconstruccion.html" class="btn btn-secondary">
+            Ver Packs Sonido
+        </a>
 
-                <div class="card">
-                    <h3>Sonorización Profesional</h3>
-                    <p>Altavoces, subwoofers, micrófonos inalámbricos, mesas digitales y soporte técnico.</p>
-                    <div class="price">Desde 350€</div>
-                </div>
-
-                <div class="card">
-                    <h3>DJ Corporativo</h3>
-                    <p>DJ profesional adaptado a eventos de empresa, networking y presentaciones.</p>
-                    <div class="price">Desde 500€</div>
-                </div>
-
-            </div>
-        </div>
-    </section> -->
-
-    <!-- SECCIÓN FEATURES -->
-    <section>
-        <div class="container features">
-            <h2>Por Qué Elegir RentalDJ</h2>
-            <div class="feature-item">✔ Equipos profesionales de alta gama</div>
-            <div class="feature-item">✔ Puntualidad y montaje técnico garantizado</div>
-            <div class="feature-item">✔ Experiencia en eventos corporativos</div>
-            <div class="feature-item">✔ Asesoramiento personalizado</div>
-        </div>
+        <a href="enconstruccion.html" class="btn btn-secondary">
+            Galería de Productos
+        </a>
     </section>
 
     <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2>Reserva tu Fecha</h2>
-            <p style="margin-bottom:25px;">Las fechas corporativas se reservan con antelación. Consulta disponibilidad
-                ahora.</p>
+    <section>
+        <h2>Reserva tu Fecha</h2>
+        <p style="margin-bottom:25px;">
+            Las fechas se reservan con antelación. Consulta disponibilidad ahora.
+        </p>
 
-            <a href="https://wa.me/34603819541?text=Hola,%20quiero%20informacion%20de%20los%20packs%20de%20cabina%20de%20dj's"
-                class="btn btn-primary" target="_blank">
-                Contactar por WhatsApp
-            </a>
-        </div>
+        <a href="https://wa.me/34603819541?text=Hola,%20quiero%20informacion%20sobre%20presupuesto"
+            class="btn btn-primary" target="_blank">
+            Contactar por WhatsApp
+        </a>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         © 2026 RentalDJ | Producción Técnica para Eventos en Barcelona
     </footer>
