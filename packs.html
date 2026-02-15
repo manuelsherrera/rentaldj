@@ -19,43 +19,103 @@
         body {
             background: #0b0f14;
             color: #fff;
-        }
-
-        section {
-            padding: 70px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        h1,
-        h2 {
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        p {
-            opacity: .85;
             line-height: 1.6;
         }
 
-        /* HERO CON EL MISMO ESTILO QUE INDEX.HTML */
-        .hero {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER TRANSPARENTE */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 22, 32, 0.7);
+            backdrop-filter: blur(8px);
+            transition: background 0.3s;
+        }
+
+        header.scrolled {
+            background: rgba(15, 22, 32, 0.95);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #00d4ff;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all .3s;
+        }
+
+        nav a:hover {
+            background: #00d4ff;
+            color: #000;
+        }
+
+        /* HAMBURGUESA */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #00d4ff;
+        }
+
+        @media(max-width:768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(15, 22, 32, 0.95);
+                flex-direction: column;
+                width: 200px;
+                padding: 20px;
+                gap: 15px;
+                transition: right .3s ease;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* HERO */
+        section.hero {
             position: relative;
             text-align: center;
-            padding: 200px 20px 100px;
+            padding: 220px 20px 100px;
             background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .9)),
                 url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center/cover no-repeat;
             background-attachment: fixed;
             background-size: cover;
             overflow: hidden;
+            margin-top: 70px;
         }
 
         .hero-title {
@@ -89,11 +149,18 @@
             animation: fadeInUp 1.5s 0.7s forwards;
         }
 
+        p {
+            opacity: .85;
+            line-height: 1.6;
+        }
+
+        /* CARDS */
         .cards {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            padding: 70px 0;
         }
 
         .card {
@@ -145,12 +212,10 @@
             margin-top: 50px;
         }
 
-        /* AJUSTES PARA MÓVIL */
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
             .hero {
-                padding: 120px 20px 80px;
+                padding: 140px 20px 80px;
                 background-attachment: scroll;
-                /* evita zoom exagerado */
                 background-position: center top;
             }
 
@@ -172,7 +237,23 @@
 
 <body>
 
-    <!-- HERO IGUAL QUE INDEX -->
+    <!-- HEADER CON HAMBURGUESA -->
+    <header id="header">
+        <div class="logo">RentalDJ</div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <a href="index.html">Inicio</a>
+            <a href="packs.html">Packs DJ</a>
+            <a href="enconstruccion.html">Packs Sonido</a>
+            <a href="enconstruccion.html">Galería</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <h1 class="hero-title">RentalDJ</h1>
@@ -231,10 +312,6 @@
                         class="btn-primary" target="_blank">Solicitar Pack</a>
                 </div>
 
-
-
-
-
             </div>
         </div>
     </section>
@@ -243,6 +320,32 @@
     <footer>
         © 2026 RentalDJ | Producción Técnica para Eventos en Barcelona
     </footer>
+
+    <script>
+        // HAMBURGUESA FUNCIONAL
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // HEADER TRANSPARENTE + SCROLL
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 
