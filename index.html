@@ -30,25 +30,10 @@
                 url('https://images.unsplash.com/photo-1506157786151-b8491531f063') center top / cover no-repeat;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #00d4ff;
-            letter-spacing: 2px;
+        .hero-logo {
+            max-height: 100px;
+            width: auto;
             margin-bottom: 30px;
-            animation: fadeInUp 1.2s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(-25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* BOTONES */
@@ -105,14 +90,20 @@
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 25px 20px;
             font-size: .8rem;
             background: #000;
-            opacity: .6;
+            opacity: .8;
             margin-top: 40px;
         }
 
-        /* DESKTOP */
+        .footer-logo {
+            max-height: 50px;
+            width: auto;
+            margin-bottom: 8px;
+        }
+
+        /* RESPONSIVE */
         @media(min-width:768px) {
             .hero {
                 padding: 200px 20px 100px;
@@ -120,9 +111,8 @@
                 background-position: center center;
             }
 
-            .hero-title {
-                font-size: 6rem;
-                letter-spacing: 4px;
+            .btn {
+                max-width: 220px;
             }
         }
     </style>
@@ -132,7 +122,9 @@
 
     <!-- HERO -->
     <section class="hero">
-        <h1 class="hero-title">RentalDJ</h1>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo RentalDJ" class="hero-logo">
+        </a>
 
         <a href="https://wa.me/34603819541?text=Hola,%20quiero%20informacion%20sobre%20presupuesto"
             class="btn btn-primary" target="_blank">
@@ -166,6 +158,8 @@
     </section>
 
     <footer>
+        <img src="img/logo.png" alt="Logo RentalDJ" class="footer-logo">
+        <br>
         © 2026 RentalDJ | Producción Técnica para Eventos en Barcelona
     </footer>
 
